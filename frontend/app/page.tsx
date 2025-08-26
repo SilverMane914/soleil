@@ -7,16 +7,8 @@ import Button from "../components/atoms/Button";
 import HeroSection from "../components/organisms/HeroSection";
 import ServiceAmenitiesSection from "../components/organisms/ServiceAmenitiesSection";
 import { HOME_CONTENT } from "../constants/seedData";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function HomePage() {
-  const handleNextRoom = () => {
-    // Handle next room logic
-  };
-
-  const handlePrevRoom = () => {
-    // Handle previous room logic
-  };
 
   return (
     <main className="min-h-screen bg-background">
@@ -32,9 +24,9 @@ export default function HomePage() {
       {/* Welcome Section */}
       <section className="py-48 bg-background">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <h2 className="font-abhaya-libre font-normal text-[64px] leading-[1.1] tracking-[-2%] text-primary">
+              <h2 className="font-butler font-normal text-[64px] leading-[1.1] tracking-[-2%] text-primary">
                 {HOME_CONTENT.welcome.title.split("\n").map((line, index) => (
                   <React.Fragment key={index}>
                     {line}
@@ -54,7 +46,7 @@ export default function HomePage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-primary text-primary hover:bg-primary hover:text-white transition-colors"
+                  className="border-primary text-primary hover:bg-primary hover:text-white transition-color rounded-full"
                   icon={true}
                 >
                   {HOME_CONTENT.welcome.buttonText}
@@ -121,24 +113,10 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="space-y-16">
             {/* Section Header */}
-            <div className="flex justify-between items-center">
+            <div>
               <h2 className="font-butler font-normal text-[72px] leading-[1.1] tracking-[-2%] text-primary">
                 Discover Our Rooms
               </h2>
-              <div className="flex items-center gap-8">
-                <button
-                  onClick={handlePrevRoom}
-                  className="w-14 h-14 border border-border rounded-full flex items-center justify-center hover:border-primary hover:bg-primary/5 transition-all duration-200"
-                >
-                  <ArrowLeft className="w-6 h-6 text-secondary" />
-                </button>
-                <button
-                  onClick={handleNextRoom}
-                  className="w-14 h-14 border border-primary rounded-full flex items-center justify-center bg-primary/5"
-                >
-                  <ArrowRight className="w-6 h-6 text-primary" />
-                </button>
-              </div>
             </div>
 
             {/* Rooms Grid */}
@@ -234,22 +212,6 @@ export default function HomePage() {
         title={HOME_CONTENT.serviceAmenities.title}
         description={HOME_CONTENT.serviceAmenities.description}
       />
-
-      {/* Navigation Arrows */}
-      <section className="py-8 bg-background">
-        <div className="container-custom">
-          <div className="flex justify-center">
-            <div className="flex items-center gap-8">
-              <button className="w-14 h-14 border border-border rounded-full flex items-center justify-center hover:border-primary hover:bg-primary/5 transition-all duration-200">
-                <ArrowLeft className="w-6 h-6 text-secondary" />
-              </button>
-              <button className="w-14 h-14 border border-primary rounded-full flex items-center justify-center bg-primary/5">
-                <ArrowRight className="w-6 h-6 text-primary" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Booking Section */}
       <BookingSection />
