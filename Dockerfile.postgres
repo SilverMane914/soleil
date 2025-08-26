@@ -1,0 +1,12 @@
+FROM postgres:15-alpine
+
+# Install additional packages if needed
+RUN apk add --no-cache \
+    postgresql-contrib \
+    && rm -rf /var/cache/apk/*
+
+# Copy custom PostgreSQL configuration
+COPY postgresql.conf /etc/postgresql/postgresql.conf
+
+# Set custom configuration
+CMD ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]

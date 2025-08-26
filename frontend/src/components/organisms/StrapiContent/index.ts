@@ -1,0 +1,1 @@
+export { StrapiContent } from "./StrapiContent";

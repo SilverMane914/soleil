@@ -1,0 +1,26 @@
+{
+  "name": "soleil",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"cd backend && yarn dev\" \"cd frontend && yarn dev\"",
+    "build": "concurrently \"cd backend && yarn build\" \"cd frontend && yarn build\"",
+    "start": "concurrently \"cd backend && yarn start\" \"cd frontend && yarn start\"",
+    "install:all": "yarn install && cd backend && yarn install && cd ../frontend && yarn install",
+    "clean": "yarn clean:backend && yarn clean:frontend",
+    "clean:backend": "cd backend && yarn clean",
+    "clean:frontend": "cd frontend && yarn clean",
+    "lint": "concurrently \"cd backend && yarn lint\" \"cd frontend && yarn lint\"",
+    "prepare": "husky",
+    "lint:staged": "lint-staged",
+    "commitlint": "commitlint --edit"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "concurrently": "^8.2.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.3.3"
+  }
+}

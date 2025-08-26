@@ -1,0 +1,224 @@
+{
+  "public": {
+    "api::footer.footer": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      }
+    },
+    "api::header.header": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      }
+    },
+    "api::product.product": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      }
+    },
+    "api::category.category": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      }
+    }
+  },
+  "authenticated": {
+    "api::footer.footer": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      },
+      "create": {
+        "enabled": false,
+        "policy": ""
+      },
+      "update": {
+        "enabled": false,
+        "policy": ""
+      },
+      "delete": {
+        "enabled": false,
+        "policy": ""
+      }
+    },
+    "api::header.header": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      },
+      "create": {
+        "enabled": false,
+        "policy": ""
+      },
+      "update": {
+        "enabled": false,
+        "policy": ""
+      },
+      "delete": {
+        "enabled": false,
+        "policy": ""
+      }
+    },
+    "api::product.product": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      },
+      "create": {
+        "enabled": false,
+        "policy": ""
+      },
+      "update": {
+        "enabled": false,
+        "policy": ""
+      },
+      "delete": {
+        "enabled": false,
+        "policy": ""
+      }
+    },
+    "api::category.category": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      },
+      "create": {
+        "enabled": false,
+        "policy": ""
+      },
+      "update": {
+        "enabled": false,
+        "policy": ""
+      },
+      "delete": {
+        "enabled": false,
+        "policy": ""
+      }
+    }
+  },
+  "admin": {
+    "api::footer.footer": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      },
+      "create": {
+        "enabled": true,
+        "policy": ""
+      },
+      "update": {
+        "enabled": true,
+        "policy": ""
+      },
+      "delete": {
+        "enabled": true,
+        "policy": ""
+      }
+    },
+    "api::header.header": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      },
+      "create": {
+        "enabled": true,
+        "policy": ""
+      },
+      "update": {
+        "enabled": true,
+        "policy": ""
+      },
+      "delete": {
+        "enabled": true,
+        "policy": ""
+      }
+    },
+    "api::product.product": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      },
+      "create": {
+        "enabled": true,
+        "policy": ""
+      },
+      "update": {
+        "enabled": true,
+        "policy": ""
+      },
+      "delete": {
+        "enabled": true,
+        "policy": ""
+      }
+    },
+    "api::category.category": {
+      "find": {
+        "enabled": true,
+        "policy": ""
+      },
+      "findOne": {
+        "enabled": true,
+        "policy": ""
+      },
+      "create": {
+        "enabled": true,
+        "policy": ""
+      },
+      "update": {
+        "enabled": true,
+        "policy": ""
+      },
+      "delete": {
+        "enabled": true,
+        "policy": ""
+      }
+    }
+  }
+}

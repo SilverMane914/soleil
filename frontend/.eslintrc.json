@@ -1,0 +1,39 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "plugins": ["@typescript-eslint", "unused-imports", "simple-import-sort"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "disallowTypeAnnotations": false
+      }
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^react", "^next"],
+          ["^node:"],
+          ["^@?\\w"],
+          ["^@/"],
+          ["^[./]"],
+          ["^.*\\u0000$"],
+          ["^.+\\.css$", "^.+\\.scss$", "^.+\\.sass$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error"
+  }
+}
