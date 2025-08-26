@@ -1,17 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import Header from "../../components/organisms/Header";
 import HeroSection from "../../components/organisms/HeroSection";
-import Footer from "../../components/organisms/Footer";
 import BookingSection from "../../components/organisms/BookingSection";
 import { ABOUT_CONTENT } from "../../constants/seedData";
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
-      {/* Header with Hero Section */}
-      <Header />
-
       {/* Hero Section */}
       <HeroSection title="SOLEIL" subtitle="ABOUT US" />
 
@@ -93,9 +88,6 @@ export default function AboutPage() {
 
       {/* Booking Section */}
       <BookingSection />
-
-      {/* Footer */}
-      <Footer />
     </main>
   );
 }
