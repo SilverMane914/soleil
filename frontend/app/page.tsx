@@ -5,6 +5,7 @@ import Image from "next/image";
 import BookingSection from "../components/organisms/BookingSection";
 import Button from "../components/atoms/Button";
 import HeroSection from "../components/organisms/HeroSection";
+import ServiceAmenitiesSection from "../components/organisms/ServiceAmenitiesSection";
 import { HOME_CONTENT } from "../constants/seedData";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -229,67 +230,10 @@ export default function HomePage() {
       </section>
 
       {/* Service & Amenities Section */}
-      <section className="py-24 bg-background">
-        <div className="container-custom">
-          <div className="space-y-16">
-            {/* Section Header */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <h2 className="font-butler font-normal text-[72px] leading-[1.1] tracking-[-2%] text-primary">
-                {HOME_CONTENT.serviceAmenities.title
-                  .split("\n")
-                  .map((line, index) => (
-                    <React.Fragment key={index}>
-                      {line}
-                      {index <
-                        HOME_CONTENT.serviceAmenities.title.split("\n").length -
-                          1 && <br />}
-                    </React.Fragment>
-                  ))}
-              </h2>
-              <p className="font-figtree font-normal text-[20px] leading-[1.5] text-secondary">
-                {HOME_CONTENT.serviceAmenities.description}
-              </p>
-            </div>
-
-            {/* Tab Buttons */}
-            <div className="flex justify-start gap-4">
-              <button className="px-14 py-4 border border-primary text-primary font-figtree font-medium text-body rounded-full transition-all duration-200">
-                Service
-              </button>
-              <button className="px-14 py-4 bg-primary text-white font-figtree font-medium text-body rounded-full transition-all duration-200">
-                Amenities
-              </button>
-            </div>
-
-            {/* Featured Items Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {HOME_CONTENT.serviceAmenities.featuredItems.map((item) => (
-                <div key={item.id} className="space-y-5">
-                  {/* Item Image */}
-                  <div className="w-full h-[588px] overflow-hidden relative">
-                    <Image
-                      src={item.image}
-                      alt={`${item.title} - Wyndham Soleil Hotel`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-
-                  {/* Item Content */}
-                  <div className="space-y-2">
-                    <h3 className="font-figtree font-semibold text-[20px] leading-[1.4] text-primary uppercase">
-                      {item.title}
-                    </h3>
-                    <p className="font-figtree font-normal text-[16px] leading-[1.5] text-secondary">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceAmenitiesSection
+        title={HOME_CONTENT.serviceAmenities.title}
+        description={HOME_CONTENT.serviceAmenities.description}
+      />
 
       {/* Navigation Arrows */}
       <section className="py-8 bg-background">
