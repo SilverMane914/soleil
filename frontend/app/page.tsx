@@ -9,7 +9,6 @@ import ServiceAmenitiesSection from "../components/organisms/ServiceAmenitiesSec
 import { HOME_CONTENT } from "../constants/seedData";
 
 export default function HomePage() {
-
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -44,6 +43,7 @@ export default function HomePage() {
                   {HOME_CONTENT.welcome.description}
                 </p>
                 <Button
+                  href="/accommodation"
                   variant="outline"
                   size="lg"
                   className="border-primary text-primary hover:bg-primary hover:text-white transition-color rounded-full"
