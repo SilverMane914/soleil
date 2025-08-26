@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import BookingSection from "../components/organisms/BookingSection";
 import Button from "../components/atoms/Button";
-import Navigation from "../components/molecules/Navigation";
 import HeroSection from "../components/organisms/HeroSection";
 import { HOME_CONTENT } from "../constants/seedData";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -21,7 +20,6 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-
       <HeroSection
         title={HOME_CONTENT.hero.title}
         subtitle={HOME_CONTENT.hero.subtitle}
