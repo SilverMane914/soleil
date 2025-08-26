@@ -92,7 +92,7 @@ export default function ServiceAmenitiesSection({
                     : "border border-primary text-primary hover:bg-primary/5 active:scale-95"
                 }`}
               >
-                {isLoading && activeTab === "service" ? "Loading..." : "Service"}
+                Service
               </button>
               <button
                 onClick={() => handleTabChange("amenity")}
@@ -103,7 +103,7 @@ export default function ServiceAmenitiesSection({
                     : "border border-primary text-primary hover:bg-primary/5 active:scale-95"
                 }`}
               >
-                {isLoading && activeTab === "amenity" ? "Loading..." : "Amenities"}
+                Amenities
               </button>
             </div>
 
@@ -149,7 +149,9 @@ export default function ServiceAmenitiesSection({
           {/* Items Grid */}
           <div
             className={`grid grid-cols-1 lg:grid-cols-3 gap-8 transition-all duration-300 ${
-              isLoading || isPageChanging ? "opacity-50 scale-95" : "opacity-100 scale-100"
+              isLoading || isPageChanging
+                ? "opacity-50 scale-95"
+                : "opacity-100 scale-100"
             }`}
           >
             {isLoading ? (
@@ -168,7 +170,10 @@ export default function ServiceAmenitiesSection({
             ) : (
               // Content
               currentItems.map((item) => (
-                <div key={item.id} className="space-y-5 group cursor-pointer transition-all duration-300 hover:scale-[1.02]">
+                <div
+                  key={item.id}
+                  className="space-y-5 group cursor-pointer transition-all duration-300 hover:scale-[1.02]"
+                >
                   {/* Item Image */}
                   <div className="w-full h-[588px] overflow-hidden relative shadow-lg">
                     <Image
@@ -209,10 +214,12 @@ export default function ServiceAmenitiesSection({
                 <span className="text-4xl">📋</span>
               </div>
               <h3 className="text-[24px] leading-[1.4] text-primary font-figtree font-semibold mb-3">
-                No {activeTab === "service" ? "Services" : "Amenities"} Available
+                No {activeTab === "service" ? "Services" : "Amenities"}{" "}
+                Available
               </h3>
               <p className="text-[16px] leading-[1.6] text-secondary font-figtree max-w-md mx-auto">
-                We&apos;re currently updating our {activeTab === "service" ? "services" : "amenities"} list.
+                We&apos;re currently updating our{" "}
+                {activeTab === "service" ? "services" : "amenities"} list.
                 Please check back soon!
               </p>
             </div>
