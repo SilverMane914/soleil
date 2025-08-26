@@ -84,26 +84,32 @@ export default function ServiceAmenitiesSection({
             {/* Tab Buttons */}
             <div className="flex gap-4">
               <button
-                onClick={() => handleTabChange("service")}
-                disabled={isLoading}
-                className={`px-14 py-4 font-figtree font-medium text-body rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
+                onClick={
                   activeTab === "service"
-                    ? "bg-primary text-white shadow-sm"
+                    ? undefined
+                    : () => handleTabChange("service")
+                }
+                className={`px-14 py-4 font-figtree font-medium text-body rounded-full transition-all duration-300 ${
+                  activeTab === "service"
+                    ? "bg-primary text-white shadow-sm cursor-default"
                     : "border border-primary text-primary hover:bg-primary/5 active:scale-95"
-                }`}
+                } ${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
               >
-                Service
+                SERVICE
               </button>
               <button
-                onClick={() => handleTabChange("amenity")}
-                disabled={isLoading}
-                className={`px-14 py-4 font-figtree font-medium text-body rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
+                onClick={
                   activeTab === "amenity"
-                    ? "bg-primary text-white shadow-sm"
+                    ? undefined
+                    : () => handleTabChange("amenity")
+                }
+                className={`px-14 py-4 font-figtree font-medium text-body rounded-full transition-all duration-300 ${
+                  activeTab === "amenity"
+                    ? "bg-primary text-white shadow-sm cursor-default"
                     : "border border-primary text-primary hover:bg-primary/5 active:scale-95"
-                }`}
+                } ${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
               >
-                Amenities
+                AMENITIES
               </button>
             </div>
 
