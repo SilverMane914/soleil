@@ -1,0 +1,289 @@
+# Wyndham Soleil Hotel - Cursor Rules
+
+# Luxury Hotel Website Development Guidelines
+
+## 🏨 PROJECT OVERVIEW
+
+This is a luxury hotel website for Wyndham Soleil, built with Next.js 15, React 18, TypeScript, and Tailwind CSS. The project follows atomic design principles and focuses on delivering an exceptional user experience for luxury hotel guests.
+
+## 🎯 CORE PRINCIPLES
+
+- **Luxury First**: Every interaction should feel premium and sophisticated
+- **User-Centric**: Prioritize guest experience and booking conversion
+- **Performance**: Fast loading times and smooth interactions
+- **Accessibility**: WCAG 2.1 AA compliance for all users
+- **Mobile-First**: Responsive design that works perfectly on all devices
+
+## 🏗️ ARCHITECTURE & STRUCTURE
+
+### Component Organization (Atomic Design)
+
+- **Atoms**: Basic UI elements (Button, Icon, Input, Typography)
+- **Molecules**: Simple component combinations (BookingForm, Navigation, Card)
+- **Organisms**: Complex page sections (Header, Footer, BookingSection)
+- **Templates**: Page layouts and structure
+- **Pages**: Complete page implementations
+
+### File Structure
+
+```
+frontend/
+├── app/                    # Next.js app router pages
+├── components/            # Reusable components
+│   ├── atoms/            # Basic UI elements
+│   ├── molecules/        # Simple combinations
+│   └── organisms/        # Complex sections
+├── constants/            # Data and configuration
+├── types/                # TypeScript type definitions
+├── utils/                # Helper functions
+└── public/               # Static assets
+```
+
+## 🎨 DESIGN SYSTEM & STYLING
+
+### Color Palette (Tailwind Config)
+
+- **Primary**: #664914 (Dark Gold), #906E31 (Gold)
+- **Secondary**: #44403C (Dark Gray), #79716B (Medium Gray)
+- **Accent**: #FFEEB1 (Light Gold), #1C1917 (Near Black)
+- **Background**: #F5F3EF (Cream), #F5F5F5 (Light Cream)
+- **Border**: #D7D3D0 (Light Gray), rgba(255, 255, 255, 0.3) (White Transparent)
+
+### Typography
+
+- **Primary Font**: Butler (serif) - for headings and luxury feel
+- **Secondary Font**: Figtree (sans-serif) - for body text and UI elements
+- **Font Sizes**: hero (78px), title (72px), heading (40px), subtitle (20px), body (16px), small (14px)
+
+### Spacing & Layout
+
+- Use `container-custom` class for consistent page margins
+- Implement proper vertical rhythm with consistent spacing (py-24, py-20, py-12)
+- Use Tailwind's spacing scale for consistency
+
+## 🧩 COMPONENT DEVELOPMENT
+
+### Button Component Standards
+
+- **Variants**: primary, secondary, accent, outline
+- **Sizes**: sm, md, lg
+- **States**: default, hover, active, disabled, loading
+- **Accessibility**: proper ARIA labels, keyboard navigation
+- **Animation**: smooth transitions (duration-200, duration-300)
+
+### Form Components
+
+- **Input Fields**: Proper labels, validation states, error messages
+- **Date Pickers**: User-friendly calendar interface
+- **Dropdowns**: Clear options with search functionality
+- **Validation**: Real-time feedback with helpful error messages
+
+### Card Components
+
+- **Image Handling**: Next.js Image with proper sizing and fallbacks
+- **Hover Effects**: Subtle animations (scale-[1.02], shadow-xl)
+- **Content Layout**: Consistent spacing and typography hierarchy
+- **Interactive States**: Clear hover and focus indicators
+
+## 🚀 PERFORMANCE & UX
+
+### Loading States
+
+- **Skeleton Screens**: Show content structure while loading
+- **Progressive Loading**: Load critical content first
+- **Smooth Transitions**: Use loading spinners and fade effects
+- **Optimistic Updates**: Immediate UI feedback for user actions
+
+### Image Optimization
+
+- **Next.js Image**: Proper sizing, formats, and lazy loading
+- **Fallback Images**: Graceful degradation for failed images
+- **Responsive Images**: Different sizes for different screen sizes
+- **Alt Text**: Descriptive alt text for accessibility
+
+### Animation & Transitions
+
+- **Duration**: 200ms for quick interactions, 300ms for page transitions
+- **Easing**: Smooth, natural feeling curves
+- **Hover Effects**: Subtle scale and shadow changes
+- **Page Transitions**: Smooth navigation between pages
+
+## ♿ ACCESSIBILITY STANDARDS
+
+### WCAG 2.1 AA Compliance
+
+- **Color Contrast**: Minimum 4.5:1 ratio for normal text
+- **Keyboard Navigation**: Full keyboard accessibility
+- **Screen Readers**: Proper ARIA labels and semantic HTML
+- **Focus Management**: Clear focus indicators and logical tab order
+
+### Semantic HTML
+
+- Use proper heading hierarchy (h1, h2, h3, etc.)
+- Implement proper landmark regions (header, main, section, footer)
+- Use descriptive alt text for all images
+- Provide proper form labels and descriptions
+
+### ARIA Implementation
+
+- **aria-label**: For interactive elements without visible text
+- **aria-describedby**: For additional element descriptions
+- **aria-expanded**: For collapsible content
+- **aria-current**: For navigation state indication
+
+## 📱 RESPONSIVE DESIGN
+
+### Breakpoint Strategy
+
+- **Mobile First**: Design for mobile, enhance for larger screens
+- **Breakpoints**: sm (640px), md (768px), lg (1024px), xl (1280px)
+- **Grid Systems**: Responsive grid layouts that adapt to screen size
+- **Touch Targets**: Minimum 44px for mobile interactions
+
+### Mobile Experience
+
+- **Touch-Friendly**: Large enough buttons and interactive elements
+- **Swipe Gestures**: Implement for image galleries and navigation
+- **Mobile Navigation**: Collapsible menu with clear hierarchy
+- **Performance**: Optimize for slower mobile connections
+
+## 🔧 TECHNICAL IMPLEMENTATION
+
+### TypeScript Standards
+
+- **Strict Mode**: Enable all strict TypeScript options
+- **Interface Definitions**: Define clear interfaces for all data structures
+- **Type Safety**: Avoid any types, use proper generics
+- **Error Handling**: Proper error boundaries and fallback UI
+
+### React Best Practices
+
+- **Functional Components**: Use hooks for state and side effects
+- **Performance**: Implement React.memo, useCallback, useMemo when needed
+- **State Management**: Use local state with useState, global state with context
+- **Event Handling**: Proper event handlers with TypeScript types
+
+### Next.js Optimization
+
+- **App Router**: Use latest Next.js 15 app router features
+- **Server Components**: Implement where appropriate for performance
+- **Dynamic Imports**: Lazy load non-critical components
+- **SEO**: Proper meta tags, structured data, and sitemap
+
+## 📊 DATA MANAGEMENT
+
+### State Management
+
+- **Local State**: Use React hooks for component-level state
+- **Global State**: Context API for shared application state
+- **Server State**: Implement proper loading and error states
+- **Data Fetching**: Use SWR or React Query for data management
+
+### Data Structures
+
+- **Consistent Interfaces**: Use defined interfaces for all data
+- **Type Safety**: Ensure all data conforms to defined types
+- **Validation**: Implement runtime validation for external data
+- **Error Handling**: Graceful fallbacks for missing or invalid data
+
+## 🧪 TESTING & QUALITY
+
+### Code Quality
+
+- **ESLint**: Strict linting rules for code consistency
+- **Prettier**: Consistent code formatting
+- **Type Checking**: Zero TypeScript errors before deployment
+- **Performance**: Lighthouse score targets (90+ for all metrics)
+
+### Testing Strategy
+
+- **Unit Tests**: Test individual components and functions
+- **Integration Tests**: Test component interactions
+- **E2E Tests**: Test complete user journeys
+- **Accessibility Tests**: Automated accessibility checking
+
+## 🚀 DEPLOYMENT & MAINTENANCE
+
+### Build Process
+
+- **Zero Errors**: Ensure no linting or TypeScript errors
+- **Performance Budget**: Maintain fast loading times
+- **Bundle Analysis**: Monitor bundle size and optimize
+- **Environment Variables**: Proper configuration management
+
+### Monitoring
+
+- **Performance Metrics**: Core Web Vitals monitoring
+- **Error Tracking**: Implement error boundary and logging
+- **Analytics**: Track user behavior and conversion rates
+- **Accessibility**: Regular accessibility audits
+
+## 📋 IMPLEMENTATION CHECKLIST
+
+### Before Committing Code
+
+- [ ] No TypeScript errors
+- [ ] No ESLint warnings
+- [ ] All tests passing
+- [ ] Accessibility requirements met
+- [ ] Performance benchmarks met
+- [ ] Mobile responsiveness verified
+- [ ] Cross-browser compatibility checked
+
+### Component Development
+
+- [ ] Proper TypeScript interfaces defined
+- [ ] Accessibility attributes implemented
+- [ ] Responsive design implemented
+- [ ] Loading states handled
+- [ ] Error states handled
+- [ ] Hover and focus states implemented
+- [ ] Animation performance optimized
+
+### Page Development
+
+- [ ] SEO meta tags implemented
+- [ ] Proper heading hierarchy
+- [ ] Semantic HTML structure
+- [ ] Performance optimized
+- [ ] Accessibility compliant
+- [ ] Mobile-first design
+- [ ] Loading and error states
+
+## 🎯 SUCCESS METRICS
+
+### Performance Targets
+
+- **Lighthouse Score**: 90+ for all metrics
+- **First Contentful Paint**: < 1.5s
+- **Largest Contentful Paint**: < 2.5s
+- **Cumulative Layout Shift**: < 0.1
+- **First Input Delay**: < 100ms
+
+### User Experience Goals
+
+- **Booking Conversion**: Optimize for guest reservations
+- **Page Load Speed**: Fast, smooth navigation
+- **Mobile Experience**: Excellent on all devices
+- **Accessibility**: Full WCAG 2.1 AA compliance
+- **Visual Appeal**: Luxury, premium feel throughout
+
+## 🔄 CONTINUOUS IMPROVEMENT
+
+### Regular Reviews
+
+- **Code Reviews**: Ensure adherence to these guidelines
+- **Performance Audits**: Regular performance monitoring
+- **Accessibility Audits**: Ongoing accessibility improvements
+- **User Feedback**: Incorporate guest feedback and analytics
+
+### Technology Updates
+
+- **Framework Updates**: Keep Next.js and React current
+- **Dependency Updates**: Regular security and feature updates
+- **Best Practices**: Stay current with industry standards
+- **Performance**: Continuous optimization and monitoring
+
+---
+
+_This document ensures consistent, high-quality development of the Wyndham Soleil hotel website, prioritizing luxury user experience, performance, and accessibility._
