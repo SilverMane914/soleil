@@ -5,8 +5,9 @@ import Image from "next/image";
 import BookingSection from "../components/organisms/BookingSection";
 import Button from "../components/atoms/Button";
 import Navigation from "../components/molecules/Navigation";
+import HeroSection from "../components/organisms/HeroSection";
 import { HOME_CONTENT } from "../constants/seedData";
-import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function HomePage() {
   const handleNextRoom = () => {
@@ -20,69 +21,14 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-screen bg-gradient-to-b from-black/12 to-black/12">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/bg-srv.jpg')",
-          }}
-        />
 
-        {/* Navigation */}
-        <div className="relative z-20">
-          <Navigation />
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
-          <div className="max-w-4xl mx-auto px-8">
-            <h1 className="font-figtree font-normal text-[18px] leading-[1.4] tracking-[11.11%] text-white uppercase mb-6">
-              {HOME_CONTENT.hero.title}
-            </h1>
-            <p className="font-butler font-normal text-[78px] leading-[1.1] tracking-[-3%] text-white mb-16">
-              {HOME_CONTENT.hero.subtitle.split("\n").map((line, index) => (
-                <React.Fragment key={index}>
-                  {line}
-                  {index <
-                    HOME_CONTENT.hero.subtitle.split("\n").length - 1 && <br />}
-                </React.Fragment>
-              ))}
-            </p>
-
-            {/* Scroll Indicator */}
-            <div className="flex flex-col items-center gap-8">
-              <div className="w-px h-24 bg-white"></div>
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-white font-figtree font-semibold text-body">
-                  {HOME_CONTENT.hero.scrollText}
-                </span>
-                <ChevronDown className="w-6 h-6 text-white animate-bounce" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Floating Action Button */}
-        <div className="absolute bottom-8 right-20">
-          <div className="w-40 h-40 bg-[#FFEEB1] rounded-full p-0 flex items-center justify-center">
-            <div className="w-35 h-35 bg-[#1C1917] rounded-full flex items-center justify-center">
-              <ArrowRight className="w-6 h-6 text-[#1C1917]" />
-            </div>
-          </div>
-        </div>
-
-        {/* Page Counter */}
-        <div className="absolute bottom-8 left-20 flex items-center gap-3 text-white">
-          <span className="font-figtree font-medium text-[17px] leading-[1.5]">
-            1
-          </span>
-          <div className="w-18 h-0.5 bg-white"></div>
-          <span className="font-figtree font-medium text-[17px] leading-[1.5]">
-            4
-          </span>
-        </div>
-      </section>
+      <HeroSection
+        title={HOME_CONTENT.hero.title}
+        subtitle={HOME_CONTENT.hero.subtitle}
+        backgroundImage="/bg-srv.jpg"
+        showScrollIndicator={true}
+        showFloatingButton={true}
+      />
 
       {/* Welcome Section */}
       <section className="py-48 bg-background">
