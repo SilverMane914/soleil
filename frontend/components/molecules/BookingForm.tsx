@@ -248,8 +248,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ className = "" }) => {
         <Button
           variant="accent"
           size="lg"
-          className="w-full md:w-auto bg-white/90 text-primary-light hover:bg-white text-sm md:text-base"
-          icon={false}
+          className="w-full md:w-auto bg-white/90 text-primary-light rounded-full hover:bg-white text-sm md:text-base"
         >
           {BOOKING_FORM.buttonText}
         </Button>

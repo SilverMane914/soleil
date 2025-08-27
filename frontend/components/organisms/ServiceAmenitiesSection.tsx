@@ -89,7 +89,7 @@ export default function ServiceAmenitiesSection({
                     ? undefined
                     : () => handleTabChange("service")
                 }
-                className={`w-full sm:w-auto px-8 md:px-14 py-3 md:py-4 font-figtree font-medium text-sm md:text-body rounded-full transition-all duration-300 ${
+                className={`w-full sm:w-auto px-8 md:px-14 py-3 md:py-4 font-figtree font-medium text-sm rounded-full transition-all duration-300 ${
                   activeTab === "service"
                     ? "bg-primary text-white shadow-sm cursor-default"
                     : "border border-primary text-primary hover:bg-primary/5 active:scale-95"
@@ -103,7 +103,7 @@ export default function ServiceAmenitiesSection({
                     ? undefined
                     : () => handleTabChange("amenity")
                 }
-                className={`w-full sm:w-auto px-8 md:px-14 py-3 md:py-4 font-figtree font-medium text-sm md:text-body rounded-full transition-all duration-300 ${
+                className={`w-full sm:w-auto px-8 md:px-14 py-3 md:py-4 font-figtree font-medium text-sm rounded-full transition-all duration-300 ${
                   activeTab === "amenity"
                     ? "bg-primary text-white shadow-sm cursor-default"
                     : "border border-primary text-primary hover:bg-primary/5 active:scale-95"
