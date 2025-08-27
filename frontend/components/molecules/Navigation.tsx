@@ -10,15 +10,23 @@ const Navigation: React.FC = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // Mark component as mounted
+    setIsMounted(true);
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      // Change navigation style after scrolling past 100px (hero section height)
-      setIsScrolled(scrollPosition > 100);
+      setIsScrolled(scrollPosition > 10);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Set initial scroll position after mount
+    if (typeof window !== "undefined") {
+      handleScroll(); // Call immediately to set initial state
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -36,6 +44,11 @@ const Navigation: React.FC = () => {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  // Don't render navigation until component is mounted to avoid hydration issues
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <nav
