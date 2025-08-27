@@ -59,7 +59,7 @@ const Navigation: React.FC = () => {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
           <div className="flex items-center">
             <Link
@@ -72,19 +72,19 @@ const Navigation: React.FC = () => {
                 alt="Wyndham Soleil Logo"
                 width={240}
                 height={80}
-                className="h-20 w-auto"
+                className="h-16 md:h-20 w-auto"
                 priority
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center gap-12">
+          <ul className="hidden lg:flex items-center gap-8 md:gap-12">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`font-figtree font-medium text-body transition-colors duration-200 focus:outline-none ${
+                  className={`font-figtree font-medium text-sm md:text-body transition-colors duration-200 focus:outline-none ${
                     isScrolled
                       ? pathname === item.href
                         ? "text-[#906E31] hover:text-[#906E31]/80"
@@ -111,9 +111,9 @@ const Navigation: React.FC = () => {
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 md:w-6 md:h-6" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5 md:w-6 md:h-6" />
             )}
           </button>
         </div>
@@ -122,12 +122,12 @@ const Navigation: React.FC = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden">
             <div className="py-4 border-t border-white/20">
-              <ul className="space-y-4">
+              <ul className="space-y-3 md:space-y-4">
                 {navItems.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className={`block font-figtree font-medium text-body transition-colors duration-200 focus:outline-none py-2 ${
+                      className={`block font-figtree font-medium text-sm md:text-body transition-colors duration-200 focus:outline-none py-2 ${
                         isScrolled
                           ? pathname === item.href
                             ? "text-[#906E31]"

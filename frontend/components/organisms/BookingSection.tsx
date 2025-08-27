@@ -8,7 +8,7 @@ interface BookingSectionProps {
 const BookingSection: React.FC<BookingSectionProps> = ({ className = "" }) => {
   return (
     <section
-      className={`py-32 bg-cover bg-center bg-no-repeat relative ${className}`}
+      className={`py-16 md:py-32 bg-cover bg-center bg-no-repeat relative ${className}`}
     >
       {/* Background Image */}
       <div
@@ -22,7 +22,7 @@ const BookingSection: React.FC<BookingSectionProps> = ({ className = "" }) => {
       {/* Content */}
       <div className="relative z-10 container-custom">
         <div className="flex justify-center">
-          <div className="w-full max-w-4xl">
+          <div className="w-full max-w-4xl px-4 md:px-0">
             <BookingForm />
           </div>
         </div>
