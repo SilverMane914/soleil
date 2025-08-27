@@ -59,13 +59,13 @@ export default function ServiceAmenitiesSection({
   };
 
   return (
-    <section className={`py-24 bg-background ${className}`}>
+    <section className={`py-12 md:py-24 bg-background ${className}`}>
       <div className="container-custom">
-        <div className="space-y-16">
+        <div className="space-y-8 md:space-y-16">
           {/* Section Header */}
           {showTitle && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <h2 className="font-butler font-normal text-[72px] leading-[1.1] tracking-[-2%] text-primary">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+              <h2 className="font-butler font-normal text-3xl md:text-[72px] leading-[1.1] tracking-[-2%] text-primary">
                 {title.split("\n").map((line, index) => (
                   <React.Fragment key={index}>
                     {line}
@@ -73,23 +73,23 @@ export default function ServiceAmenitiesSection({
                   </React.Fragment>
                 ))}
               </h2>
-              <p className="font-figtree font-normal text-[20px] leading-[1.5] text-secondary">
+              <p className="font-figtree font-normal text-base md:text-[20px] leading-[1.5] text-secondary">
                 {description}
               </p>
             </div>
           )}
 
           {/* Tab Buttons and Navigation Arrows */}
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
             {/* Tab Buttons */}
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full md:w-auto">
               <button
                 onClick={
                   activeTab === "service"
                     ? undefined
                     : () => handleTabChange("service")
                 }
-                className={`px-14 py-4 font-figtree font-medium text-body rounded-full transition-all duration-300 ${
+                className={`w-full sm:w-auto px-8 md:px-14 py-3 md:py-4 font-figtree font-medium text-sm md:text-body rounded-full transition-all duration-300 ${
                   activeTab === "service"
                     ? "bg-primary text-white shadow-sm cursor-default"
                     : "border border-primary text-primary hover:bg-primary/5 active:scale-95"
@@ -103,7 +103,7 @@ export default function ServiceAmenitiesSection({
                     ? undefined
                     : () => handleTabChange("amenity")
                 }
-                className={`px-14 py-4 font-figtree font-medium text-body rounded-full transition-all duration-300 ${
+                className={`w-full sm:w-auto px-8 md:px-14 py-3 md:py-4 font-figtree font-medium text-sm md:text-body rounded-full transition-all duration-300 ${
                   activeTab === "amenity"
                     ? "bg-primary text-white shadow-sm cursor-default"
                     : "border border-primary text-primary hover:bg-primary/5 active:scale-95"
@@ -114,11 +114,11 @@ export default function ServiceAmenitiesSection({
             </div>
 
             {/* Navigation Arrows */}
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4 md:gap-8">
               <button
                 onClick={handlePrevPage}
                 disabled={currentPage === 1 || isLoading || isPageChanging}
-                className={`w-14 h-14 border rounded-full flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
+                className={`w-12 h-12 md:w-14 md:h-14 border rounded-full flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
                   currentPage === 1
                     ? "border-border text-secondary cursor-not-allowed"
                     : "border-border text-secondary hover:border-primary hover:bg-primary/5 hover:scale-105 active:scale-95"
@@ -126,9 +126,9 @@ export default function ServiceAmenitiesSection({
                 aria-label="Previous page"
               >
                 {isPageChanging && currentPage > 1 ? (
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"></div>
+                  <div className="animate-spin rounded-full h-3 w-3 md:h-4 md:w-4 border-b-2 border-primary"></div>
                 ) : (
-                  <ArrowLeft className="w-6 h-6" />
+                  <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
                 )}
               </button>
               <button
@@ -136,7 +136,7 @@ export default function ServiceAmenitiesSection({
                 disabled={
                   currentPage === totalPages || isLoading || isPageChanging
                 }
-                className={`w-14 h-14 border rounded-full flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
+                className={`w-12 h-12 md:w-14 md:h-14 border rounded-full flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
                   currentPage === totalPages
                     ? "border-border text-secondary cursor-not-allowed"
                     : "border-primary bg-primary/5 text-primary hover:bg-primary/10 hover:scale-105 active:scale-95"
@@ -144,9 +144,9 @@ export default function ServiceAmenitiesSection({
                 aria-label="Next page"
               >
                 {isPageChanging && currentPage < totalPages ? (
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"></div>
+                  <div className="animate-spin rounded-full h-3 w-3 md:h-4 md:w-4 border-b-2 border-primary"></div>
                 ) : (
-                  <ArrowRight className="w-6 h-6" />
+                  <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
                 )}
               </button>
             </div>
@@ -154,7 +154,7 @@ export default function ServiceAmenitiesSection({
 
           {/* Items Grid */}
           <div
-            className={`grid grid-cols-1 lg:grid-cols-3 gap-8 transition-all duration-300 ${
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 transition-all duration-300 ${
               isLoading || isPageChanging
                 ? "opacity-50 scale-95"
                 : "opacity-100 scale-100"
@@ -164,11 +164,14 @@ export default function ServiceAmenitiesSection({
               // Loading state
               <>
                 {[1, 2, 3].map((index) => (
-                  <div key={index} className="space-y-5 animate-pulse">
-                    <div className="w-full h-[588px] bg-gray-200 rounded-lg"></div>
+                  <div
+                    key={index}
+                    className="space-y-4 md:space-y-5 animate-pulse"
+                  >
+                    <div className="w-full h-[300px] md:h-[588px] bg-gray-200 rounded-lg"></div>
                     <div className="space-y-2">
-                      <div className="h-6 bg-gray-200 rounded w-3/4"></div>
-                      <div className="h-4 bg-gray-200 rounded w-full"></div>
+                      <div className="h-5 md:h-6 bg-gray-200 rounded w-3/4"></div>
+                      <div className="h-3 md:h-4 bg-gray-200 rounded w-full"></div>
                     </div>
                   </div>
                 ))}
@@ -178,10 +181,10 @@ export default function ServiceAmenitiesSection({
               currentItems.map((item) => (
                 <div
                   key={item.id}
-                  className="space-y-5 group cursor-pointer transition-all duration-300 hover:scale-[1.02]"
+                  className="space-y-4 md:space-y-5 group cursor-pointer transition-all duration-300 hover:scale-[1.02]"
                 >
                   {/* Item Image */}
-                  <div className="w-full h-[588px] overflow-hidden relative shadow-lg">
+                  <div className="w-full h-[300px] md:h-[588px] overflow-hidden relative shadow-lg">
                     <Image
                       src={item.image}
                       alt={`${item.title} - Wyndham Soleil Hotel`}
@@ -201,10 +204,10 @@ export default function ServiceAmenitiesSection({
 
                   {/* Item Content */}
                   <div className="space-y-2">
-                    <h3 className="font-figtree font-semibold text-[20px] leading-[1.4] text-primary uppercase">
+                    <h3 className="font-figtree font-semibold text-lg md:text-[20px] leading-[1.4] text-primary uppercase">
                       {item.title}
                     </h3>
-                    <p className="font-figtree font-normal text-[16px] leading-[1.5] text-secondary">
+                    <p className="font-figtree font-normal text-sm md:text-[16px] leading-[1.5] text-secondary">
                       {item.description}
                     </p>
                   </div>
@@ -215,15 +218,15 @@ export default function ServiceAmenitiesSection({
 
           {/* Empty State */}
           {currentItems.length === 0 && !isLoading && (
-            <div className="text-center py-12">
-              <div className="w-24 h-24 mx-auto mb-6 bg-gray-200 rounded-full flex items-center justify-center">
-                <span className="text-4xl">📋</span>
+            <div className="text-center py-8 md:py-12">
+              <div className="w-16 h-16 md:w-24 md:h-24 mx-auto mb-4 md:mb-6 bg-gray-200 rounded-full flex items-center justify-center">
+                <span className="text-2xl md:text-4xl">📋</span>
               </div>
-              <h3 className="text-[24px] leading-[1.4] text-primary font-figtree font-semibold mb-3">
+              <h3 className="text-lg md:text-[24px] leading-[1.4] text-primary font-figtree font-semibold mb-2 md:mb-3">
                 No {activeTab === "service" ? "Services" : "Amenities"}{" "}
                 Available
               </h3>
-              <p className="text-[16px] leading-[1.6] text-secondary font-figtree max-w-md mx-auto">
+              <p className="text-sm md:text-[16px] leading-[1.6] text-secondary font-figtree max-w-md mx-auto px-4 md:px-0">
                 We&apos;re currently updating our{" "}
                 {activeTab === "service" ? "services" : "amenities"} list.
                 Please check back soon!
