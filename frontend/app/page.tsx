@@ -4,6 +4,7 @@ import BookingSection from "../components/organisms/BookingSection";
 import Button from "../components/atoms/Button";
 import HeroSection from "../components/organisms/HeroSection";
 import ServiceAmenitiesSection from "../components/organisms/ServiceAmenitiesSection";
+import MeetingServicesSection from "../components/organisms/MeetingServicesSection";
 import { HOME_CONTENT } from "../constants/seedData";
 
 export default function HomePage() {
@@ -13,9 +14,7 @@ export default function HomePage() {
       <HeroSection
         title={HOME_CONTENT.hero.title}
         subtitle={HOME_CONTENT.hero.subtitle}
-        backgroundImage="/bg-srv.jpg"
-        showScrollIndicator={true}
-        showFloatingButton={true}
+        backgroundImage="/bg-home.jpg"
       />
 
       {/* Welcome Section */}
@@ -148,62 +147,12 @@ export default function HomePage() {
       </section>
 
       {/* Meeting Services Section */}
-      <section className="py-24 bg-background">
-        <div className="container-custom">
-          <div className="relative">
-            {/* Background Image */}
-            <div className="w-full h-[982px] overflow-hidden relative">
-              <Image
-                src={HOME_CONTENT.meetingServices.image}
-                alt="Meeting services background"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-[rgba(95,55,0,0.2)]"></div>
-            </div>
-
-            {/* Content Overlay */}
-            <div className="absolute top-44 right-32 w-88 space-y-6">
-              <h2 className="font-butler font-normal text-[72px] leading-[1.1] tracking-[-2%] text-white">
-                {HOME_CONTENT.meetingServices.title
-                  .split("\n")
-                  .map((line, index) => (
-                    <React.Fragment key={index}>
-                      {line}
-                      {index <
-                        HOME_CONTENT.meetingServices.title.split("\n").length -
-                          1 && <br />}
-                    </React.Fragment>
-                  ))}
-              </h2>
-
-              <div className="w-130 h-88 overflow-hidden relative">
-                <Image
-                  src="/img-srv-1.jpg"
-                  alt="Meeting venue"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <p className="font-figtree font-normal text-[16px] leading-[1.5] text-white max-w-[519px]">
-                {HOME_CONTENT.meetingServices.description}
-              </p>
-            </div>
-
-            {/* Page Counter */}
-            <div className="absolute bottom-24 right-20 flex flex-col items-center gap-3 text-white">
-              <span className="font-figtree font-normal text-[17px] leading-[1.5]">
-                1
-              </span>
-              <div className="w-0 h-18 border-l border-white"></div>
-              <span className="font-figtree font-normal text-[17px] leading-[1.5]">
-                4
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MeetingServicesSection
+        title={HOME_CONTENT.meetingServices.title}
+        description={HOME_CONTENT.meetingServices.description}
+        backgroundImage="/bg-ballroom.jpg"
+        overlayImage="/img-ballroom.jpg"
+      />
 
       {/* Service & Amenities Section */}
       <ServiceAmenitiesSection
