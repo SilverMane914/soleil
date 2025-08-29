@@ -690,6 +690,7 @@ export interface ServiceAmenity {
   description: string;
   image: string;
   category: "service" | "amenity";
+  [key: string]: unknown;
 }
 
 export const SERVICE_AMENITIES: ServiceAmenity[] = [

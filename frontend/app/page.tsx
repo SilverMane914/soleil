@@ -3,9 +3,10 @@ import Image from "next/image";
 import BookingSection from "../components/organisms/BookingSection";
 import Button from "../components/atoms/Button";
 import HeroSection from "../components/organisms/HeroSection";
-import ServiceAmenitiesSection from "../components/organisms/ServiceAmenitiesSection";
+import ServiceAmenitiesSlider from "../components/organisms/ServiceAmenitiesSlider";
 import MeetingServicesSection from "../components/organisms/MeetingServicesSection";
 import { HOME_CONTENT } from "../constants/seedData";
+import InfiniteSlider from "../components/molecules/InfiniteSlider";
 
 export default function HomePage() {
   return (
@@ -157,45 +158,13 @@ export default function HomePage() {
       </section>
 
       {/* Featured Rooms Section */}
-      <section className="py-32 bg-background">
-        <div className="container-custom">
-          <div className="space-y-16">
-            {/* Section Header */}
-            <div>
-              <h2 className="font-butler font-normal text-[72px] leading-[1.1] tracking-[-2%] text-primary">
-                Discover Our Rooms
-              </h2>
-            </div>
-
-            {/* Rooms Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-              {HOME_CONTENT.featuredRooms.map((room) => (
-                <div key={room.id} className="space-y-5">
-                  {/* Room Image */}
-                  <div className="w-full h-[560px] overflow-hidden relative">
-                    <Image
-                      src={room.image}
-                      alt={`${room.name} - Wyndham Soleil Hotel`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-
-                  {/* Room Content */}
-                  <div className="space-y-2">
-                    <h3 className="font-figtree font-medium text-[20px] leading-[1.4] text-primary uppercase">
-                      {room.name}
-                    </h3>
-                    <p className="font-figtree font-normal text-[16px] leading-[1.5] text-secondary">
-                      {room.size}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <InfiniteSlider
+        items={HOME_CONTENT.featuredRooms}
+        title="Discover Our Rooms"
+        maxVisible={3}
+        showNavigation={true}
+        className="py-32"
+      />
 
       {/* Meeting Services Section */}
       <MeetingServicesSection
@@ -206,7 +175,7 @@ export default function HomePage() {
       />
 
       {/* Service & Amenities Section */}
-      <ServiceAmenitiesSection
+      <ServiceAmenitiesSlider
         title={HOME_CONTENT.serviceAmenities.title}
         description={HOME_CONTENT.serviceAmenities.description}
       />
