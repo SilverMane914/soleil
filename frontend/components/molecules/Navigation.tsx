@@ -84,13 +84,9 @@ const Navigation: React.FC = () => {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`font-figtree font-medium text-sm md:text-body transition-colors duration-200 focus:outline-none ${
+                  className={`font-figtree font-medium text-sm transition-colors duration-200 focus:outline-none ${
                     isScrolled
-                      ? pathname === item.href
-                        ? "text-[#906E31] hover:text-[#906E31]/80"
-                        : "text-[#1C1917] hover:text-[#906E31]"
-                      : pathname === item.href
-                      ? "text-white"
+                      ? "text-[#906E31] hover:text-[#906E31]/80"
                       : "text-white/80 hover:text-white"
                   }`}
                 >

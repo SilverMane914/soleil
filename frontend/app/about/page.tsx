@@ -8,7 +8,11 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <HeroSection title="SOLEIL" subtitle="ABOUT US" />
+      <HeroSection
+        title="SOLEIL"
+        subtitle="ABOUT US"
+        backgroundImage="/bg-about.jpg"
+      />
 
       {/* Welcome Section */}
       <section className="py-24 bg-background">
