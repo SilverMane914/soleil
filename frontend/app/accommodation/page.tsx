@@ -84,8 +84,8 @@ export default function AccommodationPage() {
                 }}
                 className={`w-full md:w-auto flex items-center justify-between md:justify-center gap-3 px-6 md:px-8 py-3 md:py-4 font-figtree font-medium text-sm md:text-[16px] rounded-lg transition-all duration-300 ${
                   isRoomTypeOpen
-                    ? "bg-[#906E31] text-white shadow-lg"
-                    : "bg-white text-[#906E31] border border-[#906E31] hover:bg-[#906E31]/5"
+                    ? "bg-white text-[#906E31] border border-[#906E31] hover:bg-[#906E31]/5"
+                    : "bg-[#906E31] text-white shadow-lg"
                 }`}
               >
                 <span className="truncate">
@@ -237,7 +237,7 @@ export default function AccommodationPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 md:gap-6">
+                  <div className="flex items-center justify-between gap-4 md:gap-6">
                     <Button
                       href={`/accommodation/${room.id}`}
                       variant="outline"
@@ -247,6 +247,17 @@ export default function AccommodationPage() {
                     >
                       See Room Details
                     </Button>
+                    <div className="flex items-center gap-2 cursor-pointer">
+                      <Image
+                        src="/search-add.svg"
+                        alt="Compare"
+                        width={16}
+                        height={16}
+                      />
+                      <p className="text-sm md:text-[14px] font-figtree font-normal text-[#57534E] leading-relaxed hover:underline">
+                        COMPARE
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

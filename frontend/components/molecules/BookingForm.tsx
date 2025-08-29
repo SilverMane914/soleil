@@ -96,7 +96,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ className = "" }) => {
         {/* Check-in */}
         <div className="flex-1 relative">
           <div
-            className="bg-white/20 border border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/30 transition-colors"
+            className="bg-white/20 border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/30 transition-colors"
             onClick={() => {
               setShowCheckInPicker(!showCheckInPicker);
               setShowCheckOutPicker(false);
@@ -148,7 +148,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ className = "" }) => {
         {/* Check-out */}
         <div className="flex-1 relative">
           <div
-            className="bg-white/20 border border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/30 transition-colors"
+            className="bg-white/20 border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/30 transition-colors"
             onClick={() => {
               setShowCheckOutPicker(!showCheckOutPicker);
               setShowCheckInPicker(false);
@@ -200,7 +200,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ className = "" }) => {
         {/* Number of guests */}
         <div className="flex-1 relative">
           <div
-            className="bg-white/20 border border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/30 transition-colors"
+            className="bg-white/20 border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/30 transition-colors"
             onClick={() => {
               setShowGuestPicker(!showGuestPicker);
               setShowCheckInPicker(false);

@@ -98,7 +98,7 @@ export default function ImageSlider({
           {visibleImages.map(({ image, actualIndex, displayIndex }) => (
             <div
               key={`${startIndex}-${displayIndex}`}
-              className={`w-[300px] h-[299px] overflow-hidden relative cursor-pointer transition-all duration-200 ${
+              className={`w-[390px] h-[290px] overflow-hidden relative cursor-pointer transition-all duration-200 ${
                 activeIndex === actualIndex
                   ? "ring-2 ring-primary ring-offset-2"
                   : "hover:scale-105"

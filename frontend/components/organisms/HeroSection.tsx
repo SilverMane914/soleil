@@ -17,8 +17,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   showScrollIndicator = true,
   showFloatingButton = true,
 }) => {
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth", // smooth animation
+    });
+  };
   return (
-    <section className="relative h-screen pt-16 md:pt-0">
+    <section
+      className="relative h-screen pt-16 md:pt-0 hover:cursor-pointer"
+      onClick={() => scrollToBottom()}
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
