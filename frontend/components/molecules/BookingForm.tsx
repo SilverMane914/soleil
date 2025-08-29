@@ -96,19 +96,19 @@ const BookingForm: React.FC<BookingFormProps> = ({ className = "" }) => {
         {/* Check-in */}
         <div className="flex-1 relative">
           <div
-            className="bg-white/10 border border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/20 transition-colors"
+            className="bg-white/20 border border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/30 transition-colors"
             onClick={() => {
               setShowCheckInPicker(!showCheckInPicker);
               setShowCheckOutPicker(false);
               setShowGuestPicker(false);
             }}
           >
-            <label className="block text-white text-sm md:text-body mb-2 flex items-center gap-2">
+            <label className="block text-white text-sm mb-2 flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               {BOOKING_FORM.fields.checkIn}
             </label>
             <div className="flex items-center justify-between">
-              <span className="text-white text-base md:text-subtitle">
+              <span className="text-white text-base md:">
                 {formatDate(checkIn)}
               </span>
               <ChevronDown
@@ -148,19 +148,19 @@ const BookingForm: React.FC<BookingFormProps> = ({ className = "" }) => {
         {/* Check-out */}
         <div className="flex-1 relative">
           <div
-            className="bg-white/10 border border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/20 transition-colors"
+            className="bg-white/20 border border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/30 transition-colors"
             onClick={() => {
               setShowCheckOutPicker(!showCheckOutPicker);
               setShowCheckInPicker(false);
               setShowGuestPicker(false);
             }}
           >
-            <label className="block text-white text-sm md:text-body mb-2 flex items-center gap-2">
+            <label className="block text-white text-sm mb-2 flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               {BOOKING_FORM.fields.checkOut}
             </label>
             <div className="flex items-center justify-between">
-              <span className="text-white text-base md:text-subtitle">
+              <span className="text-white text-base md:">
                 {formatDate(checkOut)}
               </span>
               <ChevronDown
@@ -200,19 +200,19 @@ const BookingForm: React.FC<BookingFormProps> = ({ className = "" }) => {
         {/* Number of guests */}
         <div className="flex-1 relative">
           <div
-            className="bg-white/10 border border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/20 transition-colors"
+            className="bg-white/20 border border-white/16 rounded-md p-3 md:p-4 cursor-pointer hover:bg-white/30 transition-colors"
             onClick={() => {
               setShowGuestPicker(!showGuestPicker);
               setShowCheckInPicker(false);
               setShowCheckOutPicker(false);
             }}
           >
-            <label className="block text-white text-sm md:text-body mb-2 flex items-center gap-2">
+            <label className="block text-white text-sm mb-2 flex items-center gap-2">
               <Users className="w-4 h-4" />
               {BOOKING_FORM.fields.guests}
             </label>
             <div className="flex items-center justify-between">
-              <span className="text-white text-base md:text-subtitle">
+              <span className="text-white text-base md:">
                 {BOOKING_FORM.guestOptions.find(
                   (option) => option.value === guests
                 )?.label || `${guests} Guests`}
