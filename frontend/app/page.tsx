@@ -55,31 +55,82 @@ export default function HomePage() {
       </section>
 
       {/* Decorative Images Section */}
-      <section className="py-24 bg-background">
+      <section className="py-8 md:py-16 bg-background">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="w-full h-[640px] overflow-hidden relative">
+          {/* Mobile Layout - Single Column */}
+          <div className="block lg:hidden space-y-6">
+            {/* Mobile: Stack images vertically with consistent sizing */}
+            <div className="w-full h-[300px] md:h-[400px] overflow-hidden relative">
               <Image
                 src={HOME_CONTENT.decorativeImages.leftColumn}
-                alt="Decorative image"
+                alt="Decorative image - Left column"
                 fill
                 className="object-cover"
+                priority={false}
+                loading="lazy"
               />
             </div>
-            <div className="w-full h-[640px] overflow-hidden relative">
+
+            <div className="w-full h-[400px] md:h-[500px] overflow-hidden relative">
               <Image
                 src={HOME_CONTENT.decorativeImages.centerImage}
-                alt="Decorative image"
+                alt="Decorative image - Center column"
                 fill
                 className="object-cover"
+                priority={true}
+                loading="eager"
               />
             </div>
-            <div className="w-full h-[640px] overflow-hidden relative">
+
+            <div className="w-full h-[300px] md:h-[400px] overflow-hidden relative">
               <Image
                 src={HOME_CONTENT.decorativeImages.rightColumn}
-                alt="Decorative image"
+                alt="Decorative image - Right column"
                 fill
                 className="object-cover"
+                priority={false}
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          {/* Desktop Layout - Three Column Grid */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6 xl:gap-8 items-end">
+            {/* Left Image - Smaller, centered with middle */}
+            <div className="w-full max-w-[282px] h-[512px] overflow-hidden relative flex items-center justify-center">
+              <div className="w-full h-[282px] overflow-hidden relative">
+                <Image
+                  src={HOME_CONTENT.decorativeImages.leftColumn}
+                  alt="Decorative image - Left column"
+                  fill
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  priority={false}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Middle Image - Full size */}
+            <div className="w-full max-w-[388px] h-[512px] overflow-hidden relative">
+              <Image
+                src={HOME_CONTENT.decorativeImages.centerImage}
+                alt="Decorative image - Center column"
+                fill
+                className="object-cover transition-transform duration-300 hover:scale-105"
+                priority={true}
+                loading="eager"
+              />
+            </div>
+
+            {/* Right Image - Smaller, positioned at right edge */}
+            <div className="w-full max-w-[280px] h-[320px] overflow-hidden relative flex items-end justify-start ml-auto">
+              <Image
+                src={HOME_CONTENT.decorativeImages.rightColumn}
+                alt="Decorative image - Right column"
+                fill
+                className="object-cover transition-transform duration-300 hover:scale-105"
+                priority={false}
+                loading="lazy"
               />
             </div>
           </div>
